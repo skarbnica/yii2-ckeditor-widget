@@ -1,0 +1,29 @@
+{
+    "name": "skarbnica/yii2-ckeditor-widget",
+    "description": "custom ckeditor",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","ckeditor"],
+    "license": "MIT",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Alexander Tarasyuk",
+            "email": "djeager404@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "skarbnica\\ckeditor\\src\\": ""
+        }
+    },
+    "config": {
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm"
+            }
+        }
+    }
+}
