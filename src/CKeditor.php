@@ -4,7 +4,7 @@
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  */
-namespace dosamigos\ckeditor;
+namespace skarbnica\ckeditor;
 
 use yii\helpers\Html;
 use yii\helpers\Json;
@@ -13,6 +13,13 @@ use yii\widgets\InputWidget;
 
 class CKEditor extends InputWidget
 {
+
+    /**
+     * @var array the options for the CKEditor 4 JS plugin.
+     * Please refer to the CKEditor 4 plugin Web page for possible options.
+     * @see http://docs.ckeditor.com/#!/guide/dev_installation
+     */
+    public $clientOptions = [];
 
     /**
      * @inheritdoc
@@ -45,7 +52,7 @@ class CKEditor extends InputWidget
 
         $view = $this->getView();
 
-//        CKEditorWidgetAsset::register($view);
+        assets\CKEditorWidgetAsset::register($view);
 
         $id = $this->options['id'];
 
@@ -54,12 +61,7 @@ class CKEditor extends InputWidget
             : '{}';
 
         $js[] = "CKEDITOR.replace('$id', $options);";
-        $js[] = "dosamigos.ckEditorWidget.registerOnChangeHandler('$id');";
 
-        if (isset($this->clientOptions['filebrowserUploadUrl']) || isset($this->clientOptions['filebrowserImageUploadUrl'])) {
-            $js[] = "dosamigos.ckEditorWidget.registerCsrfImageUploadHandler();";
-        }
-
-        $view->registerJs(implode("\n", $js));
+//        $view->registerJs(implode("\n", $js));
     }
 }
