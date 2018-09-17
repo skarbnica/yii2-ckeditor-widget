@@ -26,12 +26,5 @@
                 "npm-asset-library": "vendor/npm"
             }
         }
-    },
-    "repositories": [
-        {
-          "type":"git",
-          "name":"skarbnica/css-text",
-          "url": "https://github.com/skarbnica/css-text"
-        }
-  ]
+    }
 }
