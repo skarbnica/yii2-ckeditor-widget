@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "skarbnica\\ckeditor\\src\\": ""
+            "skarbnica\\ckeditor\\": "src/"
         }
     },
     "config": {
@@ -26,12 +26,5 @@
                 "npm-asset-library": "vendor/npm"
             }
         }
-    },
-    "repositories": [
-        {
-          "type":"git",
-          "name":"skarbnica/css-text",
-          "url": "https://github.com/skarbnica/css-text"
-        }
-  ]
+    }
 }
