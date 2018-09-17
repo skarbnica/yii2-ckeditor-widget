@@ -31,7 +31,7 @@
         {
           "type":"git",
           "name":"skarbnica/css-text",
-          "url": "/OpenServer/domains/test/runtime/tmp-extensions/css-text"
+          "url": "https://github.com/skarbnica/css-text"
         }
   ]
 }
