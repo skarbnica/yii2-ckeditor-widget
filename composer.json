@@ -13,7 +13,7 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0.0",
-        "skarbnica/css-text":"*"
+        "skarbnica/css-text": "^0.1.1"
     },
     "autoload": {
         "psr-4": {
