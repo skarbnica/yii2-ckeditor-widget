@@ -13,8 +13,8 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0.0",
-        "skarbnica/css-text": "^0.1.1",
-        "skarbnica/ckeditor": "^0.1.1"
+        "skarbnica/css-text": "dev-master",
+        "skarbnica/ckeditor": "dev-master"
     },
     "autoload": {
         "psr-4": {
