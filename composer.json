@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "~2.0.0"
+        "yiisoft/yii2": "~2.0.0",
+        "skarbnica/css-text":"^0.1.1"
     },
     "autoload": {
         "psr-4": {
@@ -25,5 +26,12 @@
                 "npm-asset-library": "vendor/npm"
             }
         }
-    }
+    },
+    "repositories":[
+        {
+          "type":"git",
+          "name":"skarbnica/css-text",
+          "url": "/OpenServer/domains/test/runtime/tmp-extensions/css-text"
+        }
+  ]
 }
