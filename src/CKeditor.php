@@ -49,7 +49,9 @@ class CKEditor extends InputWidget
      */
     protected function registerPlugin()
     {
+        $view = $this->getView();
         assets\CKEditorWidgetAsset::register($view);
+
         if ($this->clientOptions['filebrowserUploadUrl'])
             $view->registerJs("filebrowserUploadUrl = '{$this->clientOptions['filebrowserUploadUrl']}';", View::POS_HEAD);
     }
