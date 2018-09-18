@@ -28,4 +28,8 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \skarbnica\ckeditor\AutoloadExample::widget(); ?>```
+<?=$form->field($model, "attribute")->widget(\skarbnica\ckeditor\CKEditor::class, [
+        'options' => ['class' => 'ckeditor'],
+        'clientOptions' => ['filebrowserUploadUrl' => '/url/to/upload']
+    ]) ?>
+```

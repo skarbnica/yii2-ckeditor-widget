@@ -4,10 +4,11 @@
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  */
+
 namespace skarbnica\ckeditor;
 
 use yii\helpers\Html;
-use yii\helpers\Json;
+use yii\web\View;
 use yii\widgets\InputWidget;
 
 
@@ -48,20 +49,8 @@ class CKEditor extends InputWidget
      */
     protected function registerPlugin()
     {
-        $js = [];
-
-        $view = $this->getView();
-
         assets\CKEditorWidgetAsset::register($view);
-
-        $id = $this->options['id'];
-
-        $options = $this->clientOptions !== false && !empty($this->clientOptions)
-            ? Json::encode($this->clientOptions)
-            : '{}';
-
-        $js[] = "CKEDITOR.replace('$id', $options);";
-
-//        $view->registerJs(implode("\n", $js));
+        if ($this->clientOptions['filebrowserUploadUrl'])
+            $view->registerJs("filebrowserUploadUrl = '{$this->clientOptions['filebrowserUploadUrl']}';", View::POS_HEAD);
     }
 }
