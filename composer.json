@@ -4,6 +4,7 @@
     "type": "yii2-extension",
     "keywords": ["yii2","extension","ckeditor"],
     "license": "MIT",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Alexander Tarasyuk",
