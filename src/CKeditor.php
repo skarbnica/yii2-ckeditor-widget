@@ -52,7 +52,26 @@ class CKEditor extends InputWidget
         $view = $this->getView();
         assets\CKEditorWidgetAsset::register($view);
 
+        $js[] = <<<JS
+$(document).off('click', '.cke_dialog_tabs a[id^="cke_Upload_"]').on('click', '.cke_dialog_tabs a[id^="cke_Upload_"]', function () {
+                var forms = $('.cke_dialog_ui_input_file iframe').contents().find('form');
+                var csrfName = yii.getCsrfParam();
+                forms.each(function () {
+                    if (!$(this).find('input[name=' + csrfName + ']').length) {
+                        var csrfTokenInput = $('<input/>').attr({
+                            'type': 'hidden',
+                            'name': csrfName
+                        }).val(yii.getCsrfToken());
+                        $(this).append(csrfTokenInput);
+                    }
+                });
+            });
+JS;
+
         if ($this->clientOptions['filebrowserUploadUrl'])
-            $view->registerJs("filebrowserUploadUrl = '{$this->clientOptions['filebrowserUploadUrl']}';", View::POS_HEAD);
+            $view->registerJs("filebrowserUploadUrl = '{$this->clientOptions['filebrowserUploadUrl']}';",View::POS_BEGIN);
+        $view->registerJs(implode("\n", $js),View::POS_END);
+
+
     }
 }
