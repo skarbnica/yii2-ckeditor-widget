@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
 
 class CKEditorAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/npm-asset/ckeditor';
+    public $sourcePath = '@vendor/skarbnica/ckeditor';
 
     public $js = [
         'ckeditor.js'
